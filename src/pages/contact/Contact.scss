@@ -1,0 +1,146 @@
+.contact {
+  width: 100%;
+  padding-top: 110px;
+
+  &__scrolling-text {
+    display: none;
+  }
+
+  &__wrapper {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      font-size: 22px;
+    }
+
+    .links__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .link {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: inherit;
+        gap: 30px;
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+        padding: 36px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
+
+        &--dark {
+          color: white;
+        }
+
+        &__name {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      font-size: 22px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__curved-text {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    &__wrapper {
+      gap: 0px;
+    }
+
+    &__links {
+      padding-right: 40px;
+      .links__wrapper {
+        .link {
+          gap: 26px;
+          padding: 28px;
+
+          &:hover {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
+          }
+        }
+      }
+    }
+
+    &__form {
+      gap: 22px;
+    }
+  }
+
+  @media screen and (max-width: 1140px) {
+    & {
+      padding-bottom: 150px;
+
+      &__scrolling-text {
+        display: block;
+        padding-top: 30px;
+        font-size: 20px;
+        font-style: italic;
+      }
+    }
+
+    .contact__wrapper {
+      flex-direction: column;
+      gap: 50px;
+      max-width: 440px;
+      margin: 0 auto;
+      padding-top: 10px;
+    }
+
+    &__links {
+      padding-right: 0px;
+    }
+
+    &__curved-text {
+      display: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text__curved {
+    animation: Text-spin infinite 16s linear;
+  }
+}
+
+@keyframes Text-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,164 @@
+.header {
+  height: 80px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+
+    .socialmedia {
+      display: none;
+    }
+  }
+
+  &__links {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark--header--links--main);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    list-style-type: none;
+
+    &:hover {
+      color: #000000;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #000000;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  .link--dark {
+    color: #6d6d6d;
+
+    &:hover {
+      color: var(--dark--header--links--hover--main);
+    }
+
+    &::after {
+      background-color: var(--dark--header--links--hover--main);
+    }
+  }
+
+  .active--link {
+    color: #222222;
+
+    &::after {
+      background-color: #222222;
+    }
+  }
+
+  .active--link--dark {
+    color: #fbfbfb;
+    &:hover {
+      color: #fbfbfb;
+    }
+    &::after {
+      background-color: #fbfbfb;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    & {
+      max-width: 940px;
+      padding: 0px 40px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__list {
+        width: 58%;
+      }
+
+      &__links {
+        color: var(--dark--header--links--main);
+
+        &:hover {
+          color: var(--dark--header--links--main);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+
+      .link--dark {
+        color: #6d6d6d;
+
+        &:hover {
+          color: #6d6d6d;
+        }
+      }
+
+      .active--link {
+        color: #222222;
+        &:hover {
+          color: #222222;
+        }
+      }
+
+      .active--link--dark {
+        color: #fbfbfb;
+        &:hover {
+          color: #fbfbfb;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    & {
+      &__list {
+        width: 64%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 920px) {
+    & {
+      max-width: 700px;
+      padding: 0px 20px;
+      height: 50px;
+
+      &__links {
+        display: none;
+      }
+
+      &__list {
+        .socialmedia {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
